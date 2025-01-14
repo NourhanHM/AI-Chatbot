@@ -1,0 +1,192 @@
+body, html {
+  height: 100%;
+  margin: 0;
+  background-color: rgb(7, 7, 24);
+  font-family: 'Arial', sans-serif;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.header {
+  text-align: center;
+  padding: 10px 0;
+  color: #ffffff;
+}
+
+.header img {
+  height: 50px;
+  width: auto;
+}
+
+
+
+.chat-title {
+  color: #ffffff;
+  font-size: 20px; /* Larger font size for the first sentence */
+  font-weight: bold;
+  display: flex;
+  flex-direction: column; /* Stack words vertically */
+  margin-left: 3px;
+  text-align: left;/* Center the text horizontally */
+}
+
+.chat-smtitle {
+  color: #ffffff;
+  font-size: 13px; /* Smaller font size for the second sentence */
+  font-weight: normal; /* Optionally, make it non-bold */
+  text-align: center; /* Center the text horizontally */
+  margin-left: 3px;
+  margin-top: 4px; /* Add a little space between the two sentences */
+}
+
+
+.chat-title span {
+  display: block; /* Ensure each word appears on a new line */
+  line-height: 1.2; /* Adjust line height for better spacing */
+}
+
+.chat-container {
+  width: 350px;
+  height: 500px;
+  background-color: rgb(10, 10, 20);
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(11, 13, 92, 0.31);
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 9999;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Minimized state */
+.chat-container.minimized {
+  height: 50px; /* Reduced height when minimized */
+  width: 50px;  /* Narrow the width to make it easier to click */
+  border-radius: 50%; /* Make it round for a more compact appearance */
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(8, 8, 69); /* Background color of the minimized bubble */
+}
+
+/* Minimized Icon */
+.minimized-icon {
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+  display:flex;
+
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+}
+
+/* Show icon when chat is minimized */
+.chat-container.minimized .minimized-icon {
+  display: flex; /* Make the icon visible only when minimized */
+}
+
+/* Chat Header */
+.chat-header {
+  background-color: rgb(76, 76, 84);
+  padding: 5px;
+  display:flex;
+  justify-content: flex-end;
+   /* Center the content vertically */
+   align-items: center;
+}
+
+.minimize-btn {
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  background-color: rgb(8, 8, 69); /* Add a background color */
+}
+
+.chat-messages {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  gap: 10px;
+  overflow-y: auto;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+.message {
+  display: flex;
+  align-items: flex-start;
+  max-width: 80%;
+  word-wrap: break-word;
+  margin: 5px 0;
+}
+
+.message.user {
+  align-self: flex-end;
+  background-color: rgb(55, 60, 63);
+  border-radius: 10px;
+  padding: 5px 10px;
+  color: #ffffff;
+  max-width: 80%;
+}
+
+.message.model {
+  align-self: flex-start;
+  background-color: rgb(22, 22, 54);
+  border-radius: 15px;
+  padding: 5px 5px;
+  color: #ffffff;
+  max-width: 80%;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background-color: rgba(76, 76, 84);
+  border-top: 1px solid #444;
+  gap: 10px;
+}
+
+.footer input {
+  flex: 1;
+  background-color: rgb(17, 16, 22);
+  color: #ffffff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  outline: none;
+  font-size: 14px;
+}
+
+.footer button {
+  background-color: rgb(106, 106, 129);
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.footer button#attachment {
+  background-color: rgb(106, 106, 129);
+}
+
+.footer button:hover {
+  background-color: rgb(108, 114, 148);
+}
